@@ -1,1 +1,11 @@
-simulation.txt
+########################################################################
+# this file introduce how to install Cocotb+questasim simulation environment
+########################################################################
+1. prepare related software
+questasim version：
+cocotb version：
+2. install questasim
+step1： 解压安装包后，执行questa_sim-2021.2_1-online.bin
+step2:  根据图形界面正常安装
+step3： 设置环境变量
+        
