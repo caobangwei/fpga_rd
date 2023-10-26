@@ -49,6 +49,9 @@ step3:  cd到licGen目录下，执行python2 mgclicgen.py xx-xx-xx-xx-xx-xx
 step4： 将license.dat拷贝到questasim的安装目录
 step5:  cd到patch目录，将pubkey_verify拷贝到questasim的安装目录，执行./pubkey_verify -y
 step6： 修改环境变量，以root为例，打开.bashrc文件
+        export PATH="/home/lighthouse/questasim/questasim/linux_x86_64":$PATH
+        export PATH="/home/lighthouse/questasim/questasim/RUVM_2021.2":$PATH
+        export LM_LICENSE_FILE="/home/lighthouse/questasim/license.dat":$LM_LICENSE_FILE
 
 完成以上安装后，执行vsim，正常情况下可以启动questasim，如果报其他错误，比如库文件缺失，则根据实际
 情况安装对应库，以下为曾经碰到的库缺失问题
