@@ -36,10 +36,32 @@ step12：启动vnc服务
 step1： 合并安装包，cat x* > questasim.tar.gz
 step2:  解压缩，tar -xzvf ./questasim.tar.gz
 step3:  登录vnc，在解压缩后的文件夹内执行questa_sim-2021.2_1-online.bin
-
-
+        在安装界面里选择本地安装文件安装，安装包名称为questa_sim-2021.2_1.aol
+        安装选项界面全选，选择全部安装。
+step4： cd到安装目录的bin下，手动执行./vsim
 
 3. questasim crack
+网络上找到的破解包名称：eetop.cn_mentor2021_crack.zip
+step1： 解压破解包，unzip eetop.cn_mentor2021_crack.zip
+step2:  通过ifconfig查询hostid
+step3:  cd到licGen目录下，执行python2 mgclicgen.py xx-xx-xx-xx-xx-xx
+        执行后在本目录下将生成license.dat
+step4： 将license.dat拷贝到questasim的安装目录
+step5:  cd到patch目录，将pubkey_verify拷贝到questasim的安装目录，执行./pubkey_verify -y
+step6： 修改环境变量，以root为例，打开.bashrc文件
+
+完成以上安装后，执行vsim，正常情况下可以启动questasim，如果报其他错误，比如库文件缺失，则根据实际
+情况安装对应库，以下为曾经碰到的库缺失问题
+case1：找不到/lib/ld-linux.so.2,这是因为questasim调用的是32的库，需要手动安装。
+       执行命令yum install glibc.i686,安装完成后执行vsim
+case2：找不到libXext.so.6,需要手动安装；
+       执行命令yum install libXext.i686,执行vsim
+case3：找不到libXft.so.2,需要手动安装；
+       执行命令yum install libXft.i686,执行vsim
+case4：找不到libgcc_s.so.1,需要手动安装；
+       执行命令yum install libgcc.i686
+
+
 
 4. 安装cocotb
 1. prepare related software
@@ -49,12 +71,5 @@ cocotb version：
 step1： 解压安装包后，执行questa_sim-2021.2_1-online.bin
 step2:  根据图形界面正常安装
 step3： 安装目录下找到bin文件夹，执行vsim
-此时会报错：找不到/lib/ld-linux.so.2,这是因为questasim调用的是32的库，需要手动安装。
-step4： 执行命令yum install glibc.i686,安装完成后执行vsim
-此时会报错：找不到libXext.so.6,需要手动安装；
-step5：执行命令yum install libXext.i686,执行vsim
-此时会报错：找不到libXft.so.2,需要手动安装；
-step6：执行命令yum install libXft.i686,执行vsim
-此时会报错，找不到libgcc_s.so.1,需要手动安装；
-step7：执行命令yum install libgcc.i686
+
         
