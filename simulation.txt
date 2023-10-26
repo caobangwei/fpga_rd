@@ -69,6 +69,16 @@ step2： 执行pip3 install cocotb
 
 5. 运行仿真
 可以从官方网站上下载测试代码，一共三个文件：test_my_design.py  Makefile mydesign.sv
+执行命令：make SIM=questa GUI=1
+SIM参数指定仿真eda工具，GUI为打开eda工具可视化界面。
+也可以修改默认的文件，默认使能为questasim 和 默认GUI打开
+cd /usr/local/lib64/python3.6/site-packages/cocotb/share/makefile
+vim Makefile.sim 修改line 96
+
+#######################################################################################
+end
+#######################################################################################
+
 
 
 
