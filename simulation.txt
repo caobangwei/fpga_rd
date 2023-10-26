@@ -32,7 +32,10 @@ step12：启动vnc服务
         systemctl restart vncserver@:1.service #重启
 
 2. 安装questasim2021
-step1： 解压安装包后，执行questa_sim-2021.2_1-online.bin
+安装文件比较大，3.8G，因此进行了文件切割后更新到腾讯云服务器。
+step1： 合并安装包，cat x* > questasim.tar.gz
+step2:  解压缩，tar -xzvf ./questasim.tar.gz
+step3:  登录vnc，在解压缩后的文件夹内执行questa_sim-2021.2_1-online.bin
 
 
 
