@@ -10,8 +10,35 @@
 1. 安装vncview
 questasim eda工具需要GUI界面，通过vnc可以直接打开，也可以安装X11实现图形化界面显示。
 step1： 安装图形桌面的软件包，yum groupinstall "Server with GUI" -y
-step2：
+step2： 安装vnc服务器，yum install tigervnc-server
+step3:  查看系统运行模式,systemctl get-default
+step4:  切换到桌面运行模式,systemctl set-default graphical.target
+step5:  启动桌面模式，init 5
+step6： 设置桌面运行模式为默认启动模式，ln -sf /lib/systemd/system/graphical.target /etc/systemd/system/default.target
+step7： 修改配置文件
+        cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service
+step8:  添加用户，vim /etc/tigervnc/vncserver.users
+        :1.root
+step9:  重新加载配置,systemctl daemon-reload
+step10：设置vnc密码 vncpasswd
+step11: 修改防火墙配置(腾讯云虚拟默认不开fw)
+        放行端口5901，firewall-cmd --zone=public --add-port=5901/tcp --permanent
+        放行vnc服务，firewall-cmd --add-service vnc-server
+        重启防火墙：firewall-cmd --reload
+        查看端口是否放行成功：firewall-cmd --list-port
+step12：启动vnc服务
+        systemctl start vncserver@:1.service #启动
+        systemctl stop vncserver@:1.service #关闭
+        systemctl restart vncserver@:1.service #重启
 
+2. 安装questasim2021
+step1： 解压安装包后，执行questa_sim-2021.2_1-online.bin
+
+
+
+3. questasim crack
+
+4. 安装cocotb
 1. prepare related software
 questasim version：
 cocotb version：
