@@ -61,8 +61,6 @@ case3：找不到libXft.so.2,需要手动安装；
 case4：找不到libgcc_s.so.1,需要手动安装；
        执行命令yum install libgcc.i686
 
-
-
 4. 安装cocotb
 1. prepare related software
 questasim version：
