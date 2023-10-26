@@ -1,11 +1,30 @@
 ########################################################################
 # this file introduce how to install Cocotb+questasim simulation environment
 ########################################################################
+环境介绍
+开发环境：腾讯云虚拟机
+操作系统：OpenCloudOS release 8.6.2205 (Core)  兼容centos8
+内核版本：Linux VM-16-11-opencloudos 5.4.119-20.0009.21.spr
+
+安装步骤：
+1. 安装vncview
+questasim eda工具需要GUI界面，通过vnc可以直接打开，也可以安装X11实现图形化界面显示。
+step1： 安装图形桌面的软件包，yum groupinstall "Server with GUI" -y
+step2：
+
 1. prepare related software
 questasim version：
 cocotb version：
 2. install questasim
 step1： 解压安装包后，执行questa_sim-2021.2_1-online.bin
 step2:  根据图形界面正常安装
-step3： 设置环境变量
+step3： 安装目录下找到bin文件夹，执行vsim
+此时会报错：找不到/lib/ld-linux.so.2,这是因为questasim调用的是32的库，需要手动安装。
+step4： 执行命令yum install glibc.i686,安装完成后执行vsim
+此时会报错：找不到libXext.so.6,需要手动安装；
+step5：执行命令yum install libXext.i686,执行vsim
+此时会报错：找不到libXft.so.2,需要手动安装；
+step6：执行命令yum install libXft.i686,执行vsim
+此时会报错，找不到libgcc_s.so.1,需要手动安装；
+step7：执行命令yum install libgcc.i686
         
