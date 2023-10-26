@@ -1,6 +1,6 @@
-########################################################################
+############################################################################
 # this file introduce how to install Cocotb+questasim simulation environment
-########################################################################
+############################################################################
 环境介绍
 开发环境：腾讯云虚拟机
 操作系统：OpenCloudOS release 8.6.2205 (Core)  兼容centos8
@@ -62,12 +62,12 @@ case4：找不到libgcc_s.so.1,需要手动安装；
        执行命令yum install libgcc.i686
 
 4. 安装cocotb
-1. prepare related software
-questasim version：
-cocotb version：
-2. install questasim
-step1： 解压安装包后，执行questa_sim-2021.2_1-online.bin
-step2:  根据图形界面正常安装
-step3： 安装目录下找到bin文件夹，执行vsim
+cocotb官方网址：https://docs.cocotb.org/en/stable/quickstart.html
+
+step1： 在终端执行 yum install make python3 python3-pip
+step2： 执行pip3 install cocotb
+
+
+
 
         
