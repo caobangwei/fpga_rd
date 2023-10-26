@@ -7,7 +7,7 @@
 内核版本：Linux VM-16-11-opencloudos 5.4.119-20.0009.21.spr
 
 安装步骤：
-1. 安装vncview
+1. 安装vncviewer
 questasim eda工具需要GUI界面，通过vnc可以直接打开，也可以安装X11实现图形化界面显示。
 step1： 安装图形桌面的软件包，yum groupinstall "Server with GUI" -y
 step2： 安装vnc服务器，yum install tigervnc-server
