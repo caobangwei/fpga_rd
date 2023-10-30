@@ -1,1 +1,6 @@
 
+zynq是xilinx soc架构的fpga芯片，是zynq-7000系列的统称，包括单核cpu的fpga芯片，比如zynq-7015（带高速bank），zynq-7007，
+                                                        双核CPU的芯片，比如zynq-7010，zynq-7020，zynq-7035，不同之处是他们的PL部分使用的FPGA系列不同.
+像7010和7020的PL部分是A7的，7035以上的是K7的FPGA，还带有高速bank。
+可以把它想象成两部分，一部分是arm，就是我们说的PS，procesing system，处理系统，包括单核或者双核的
+                   另一部分就是PL，programable logic，可编程逻辑，就是FPGA，PS和PL之间交互是通过AXI总线.
