@@ -7,3 +7,8 @@ SDH传输业务信号时各种业务信号要进入SDH的帧都要经过映射�
 SDH采用的信息结构等级称为同步传送模块STM－N（Synchronous Transport，N=1，4， 16 ，64），最基本的模块为STM－1，
                                                                                                 四个STM－1同步复用构成STM－4，
                                                                                                 16个STM－1或四个 STM－4同步复用构成STM－16；
+
+SDH采用块状的帧结构来承载信息，每帧由纵向9行和横向 270×N列字节组成，每个字节含8bit，整个帧结构分成段开销（Section OverHead，SOH）区、STM－N净负荷区和管理单元指针（AU PTR）区三个区域，
+    段开销区: 主要用于网络的运行、管理、维护及指配以保证信息能够正常灵活地传送，它又分为再生段开销（Rege nerator Section OverHead，RSOH）和复用段开销（Multiplex Section OverHead， MSOH）；
+    净负荷区: 用于存放真正用于信息业务的比特和少量的用于通道维护管理的通道开销字节；
+    管理单元指针: 用来指示净负荷区内的信息首字节在STM－N帧内的准确位置以便接收时能正确分离净负荷。
