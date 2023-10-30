@@ -1,0 +1,4 @@
+1. FPGA POWER design
+2. FPGA RESET design
+3. FPGA I2C design (temperature monitor)
+4. FPGA JTAG design (black box,we do not care)
